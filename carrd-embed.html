@@ -779,7 +779,10 @@ ttq.page();
     var lista = GALERIA[color] || [];
     var cont = document.getElementById('thumbs');
     cont.innerHTML = '';
-    var primera = null;
+    // foto principal = SIEMPRE la primera de la lista (la portada), sin importar
+    // cuál miniatura termine de cargar primero (antes esto causaba que una foto
+    // más liviana le "ganara la carrera" a la portada y apareciera de primera).
+    if(lista[0]) setMain(lista[0], color);
     lista.forEach(function(src){
       // probamos si la imagen existe antes de agregar la miniatura
       var test = new Image();
@@ -788,13 +791,18 @@ ttq.page();
         b.className = 'thumb'; b.dataset.src = src;
         b.innerHTML = '<img src="'+src+'" alt="'+color+'">';
         b.onclick = function(){ setMain(src, color); };
-        cont.appendChild(b);
-        if(!primera){ primera = src; setMain(src, color); }
+        // insertar la miniatura respetando el orden original de la lista,
+        // sin importar el orden en que terminen de cargar
+        var idx = lista.indexOf(src);
+        var siguiente = null;
+        Array.prototype.forEach.call(cont.children, function(ch){
+          var chIdx = lista.indexOf(ch.dataset.src);
+          if(chIdx > idx && (siguiente===null || chIdx < lista.indexOf(siguiente.dataset.src))) siguiente = ch;
+        });
+        if(siguiente) cont.insertBefore(b, siguiente); else cont.appendChild(b);
       };
       test.src = src;
     });
-    // fallback inmediato con la primera de la lista (por si tardan en cargar)
-    if(lista[0]) setMain(lista[0], color);
 
     // swatches
     document.querySelectorAll('.color-op').forEach(function(c){
