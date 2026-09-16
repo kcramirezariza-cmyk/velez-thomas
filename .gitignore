@@ -3,3 +3,7 @@ carrd-embed.html.bak
 .DS_Store
 Thumbs.db
 .fuse_hidden*
+img/*.HEIC
+video/IMG_*.MP4
+video/IMG_*.MOV
+.preview_tmp/
