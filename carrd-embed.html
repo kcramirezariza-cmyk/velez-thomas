@@ -890,11 +890,10 @@ ttq.page();
     document.body.classList.toggle('scrolled', window.scrollY>600);
   });
 
-  // ---- Al enviar el formulario ----
+  // ---- Al enviar el formulario: arma el mensaje y lo manda a WhatsApp ----
   function prepararEnvio(e){
     e.preventDefault(); // evitamos que Chrome abra gracias.html?datos... (falla en archivos locales)
 
-    // Recoge los datos del pedido (los usaremos para WhatsApp / Sheets / n8n cuando lo conectemos)
     var f = document.getElementById('form-compra');
     var datos = {
       nombre: f.nombre.value, color: f.color.value, talla: f.talla.value,
@@ -907,7 +906,22 @@ ttq.page();
     // if(window.fbq) fbq('track','Lead');
     // if(window.ttq) ttq.track('SubmitForm');
 
-    // Redirige a la página de gracias (sin datos en la URL -> funciona también en local)
+    // Arma el mensaje de WhatsApp con todos los datos del pedido
+    var msg = '🛒 *NUEVO PEDIDO — Vélez Thomas*\n\n' +
+      '👤 Nombre: ' + datos.nombre + '\n' +
+      '👟 Color: ' + datos.color + '\n' +
+      '📏 Talla: ' + datos.talla + '\n' +
+      '📱 Celular: ' + datos.celular + '\n' +
+      '📍 Departamento: ' + datos.departamento + '\n' +
+      '🏙️ Ciudad: ' + datos.ciudad + '\n' +
+      '🏠 Dirección: ' + datos.direccion +
+      (datos.notas ? ('\n📝 Notas: ' + datos.notas) : '') +
+      '\n💰 Total: $150.000 (pago contraentrega)';
+
+    // Abre WhatsApp en una pestaña nueva con el pedido ya redactado, hacia tu número
+    window.open('https://wa.me/' + WA_NUMERO + '?text=' + encodeURIComponent(msg), '_blank');
+
+    // Muestra la pantalla de gracias con el resumen
     var g = document.getElementById('gracias-overlay');
     if(g){ g.hidden = false; document.body.style.overflow='hidden'; window.scrollTo(0,0); }
     if(window.fbq) fbq('track','Purchase',{value:150000,currency:'COP'});

@@ -53,14 +53,14 @@ Por defecto, al enviar el formulario redirige a `gracias.html`. Para que además
 - **Google Sheets** (gratis, guarda todo en una hoja).
 - **n8n** (ya lo usas): mando los datos a un webhook y automatizas.
 
-También cambia el número de WhatsApp: busca `57XXXXXXXXXX` en `index.html` y `gracias.html` y pon tu número real (con 57 y sin espacios).
+También cambia el número de WhatsApp: busca `573223043403` en `index.html` y `gracias.html` y pon tu número real (con 57 y sin espacios).
 
 ---
 
 ## 6) Precios y textos
 Están todos en `index.html`. Busca y cambia:
-- `$329.900` (precio tachado) y `$199.900` (precio promo). Están en varias partes.
-- `-39%` (el % de descuento).
+- `$329.900` (precio tachado) y `$150.000` (precio promo). Están en varias partes.
+- `-55%` (el % de descuento).
 - Nombres/ciudades de los testimonios.
 
 ---

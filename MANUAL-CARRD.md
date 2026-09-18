@@ -15,7 +15,7 @@
 ## 2. Qué quiero que hagas, asistente
 
 1. Antes que nada, **ábreme `carrd-embed.html`** y ayúdame a editar 2 valores al inicio del `<script>`:
-   - `var WA_NUMERO = '57XXXXXXXXXX';` → reemplázalo por mi número real de WhatsApp (formato: 57 + número, sin `+` ni espacios). **Pregúntame el número si no te lo he dado.**
+   - `var WA_NUMERO = '573223043403';` → reemplázalo por mi número real de WhatsApp (formato: 57 + número, sin `+` ni espacios). **Pregúntame el número si no te lo he dado.**
    - `var VIDEO_URL = '';` → si ya tengo el enlace directo del video `.mp4`, ponlo ahí; si no, déjalo vacío.
 2. Verifica que el archivo abra bien en el navegador (fotos visibles, contador corriendo, y que al enviar el formulario aparezca la pantalla de gracias con las políticas). Si algo falla, corrígelo.
 3. Abre **Carrd** en el navegador de Cowork (`https://carrd.co`) y **guíame paso a paso** mientras yo hago el login y pego el código. Ve indicándome cada clic y revisando conmigo que quede bien.
@@ -40,7 +40,7 @@
 
 ## 5. Datos útiles
 
-- Precio actual en la landing: **$199.900** (antes $329.900, -39%). Si quiero cambiarlo, dímelo y lo ajustas en el código (aparece en varias partes).
+- Precio actual en la landing: **$150.000** (antes $329.900, -55%). Si quiero cambiarlo, dímelo y lo ajustas en el código (aparece en varias partes).
 - El formulario hoy **no envía los datos a ningún lado todavía**: solo muestra la pantalla de gracias. Si quiero recibir los pedidos, ayúdame a conectarlo a **WhatsApp, Google Sheets o n8n** (pregúntame cuál prefiero).
 - Nº de WhatsApp: pendiente por darte. Píxel: pendiente por darte el ID.
 
