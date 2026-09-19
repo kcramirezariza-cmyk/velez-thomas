@@ -73,9 +73,10 @@ ttq.page();
   }
   .ph small{display:block;font-weight:400;color:var(--gris);margin-top:6px;font-size:.72rem}
 
-  /* Barra superior con texto en movimiento (marquee) */
+  /* Barra superior con texto en movimiento (marquee) — anclada arriba, siempre visible */
   .topbar{background:var(--negro);color:#fff;font-size:.78rem;
-    padding:9px 0;font-weight:600;letter-spacing:.02em;overflow:hidden;white-space:nowrap}
+    padding:9px 0;font-weight:600;letter-spacing:.02em;overflow:hidden;white-space:nowrap;
+    position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,.35)}
   .topbar .track{display:inline-block;white-space:nowrap;
     animation:marquee 18s linear infinite}
   .topbar .track span{padding:0 26px}
