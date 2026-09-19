@@ -86,24 +86,22 @@ ttq.page();
   }
   @media(prefers-reduced-motion:reduce){.topbar .track{animation:none;padding-left:0}}
 
-  /* HERO */
-  .hero{padding:26px 20px 10px;text-align:center;background:linear-gradient(180deg,#1a1815,var(--crema))}
-  .badge{display:inline-block;background:var(--crema2);color:var(--miel);border:1px solid var(--linea);
-    font-size:.72rem;font-weight:700;padding:6px 14px;border-radius:40px;
-    text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
-  .hero h1{font-size:2rem;color:var(--texto);margin-bottom:6px}
+  /* HERO — compacto para que la foto + colores + precio quepan sin desplazarse */
+  .hero{padding:8px 20px 4px;text-align:center;background:linear-gradient(180deg,#1a1815,var(--crema))}
+  .hero h1{font-size:1.4rem;color:var(--texto);margin-bottom:3px}
   .hero h1 span{color:var(--miel)}
-  .hero .sub{font-size:1.02rem;color:var(--gris);margin-bottom:18px}
-  .stars-inline{color:var(--miel);font-size:1rem;margin-bottom:12px}
+  .hero .sub{font-size:1rem;color:var(--gris);margin:14px 0 4px}
+  .stars-inline{color:var(--miel);font-size:.88rem;margin-bottom:6px}
   .stars-inline b{color:var(--texto)}
 
-  /* Galería protagonista del hero (estilo tienda) */
+  /* Galería protagonista del hero (estilo tienda, deslizable con el dedo) */
   .hero-img{background:var(--crema2);border-radius:var(--radio);box-shadow:var(--sombra);
-    overflow:hidden;margin-bottom:10px;position:relative;aspect-ratio:3/4}
-  .hero-img img{width:100%;height:100%;object-fit:contain;display:block}
+    overflow:hidden;margin-bottom:8px;position:relative;
+    height:32vh;min-height:190px;max-height:270px;touch-action:pan-y}
+  .hero-img img{width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none}
   .hero-img .zoom-tip{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.55);
-    color:#fff;font-size:.68rem;padding:4px 9px;border-radius:20px}
-  .thumbs{display:flex;gap:10px;margin-bottom:18px;overflow-x:auto;padding:2px 0 6px;
+    color:#fff;font-size:.68rem;padding:4px 9px;border-radius:20px;pointer-events:none}
+  .thumbs{display:flex;gap:10px;margin:4px 0 14px;overflow-x:auto;padding:2px 0 6px;
     scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .thumbs::-webkit-scrollbar{display:none}
   .thumb{flex:0 0 64px;width:64px;height:64px;border-radius:12px;overflow:hidden;
@@ -112,7 +110,7 @@ ttq.page();
   .thumb img{width:100%;height:100%;object-fit:cover}
 
   /* Selector de color */
-  .color-wrap{margin:16px 0}
+  .color-wrap{margin:6px 0}
   .color-title{font-size:.82rem;color:var(--gris);margin-bottom:8px;text-align:left}
   .color-title b{color:var(--texto)}
   .colores{display:flex;gap:10px;justify-content:flex-start}
@@ -125,8 +123,8 @@ ttq.page();
   .color-op span{font-size:.85rem;font-weight:600}
 
   /* Precio */
-  .precio-box{margin:16px 0;background:var(--crema2);border:1px solid var(--linea);
-    border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .precio-box{margin:6px 0;background:var(--crema2);border:1px solid var(--linea);
+    border-radius:14px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .precio-left{text-align:left}
   .precio-new{color:#fff;font-size:2.3rem;font-weight:800;letter-spacing:-.03em;line-height:1}
   .precio-old{color:var(--gris);text-decoration:line-through;font-size:.9rem;display:block;margin-top:4px}
@@ -143,6 +141,8 @@ ttq.page();
   .cta small{display:block;font-size:.72rem;font-weight:500;text-transform:none;opacity:.9;margin-top:2px}
   @keyframes pulse{0%{box-shadow:0 8px 20px rgba(30,158,90,.35)}50%{box-shadow:0 8px 30px rgba(30,158,90,.6)}100%{box-shadow:0 8px 20px rgba(30,158,90,.35)}}
   .cta-note{text-align:center;font-size:.78rem;color:var(--gris);margin-top:10px}
+  .hero .cta{padding:14px}
+  .hero .cta-note{margin-top:6px}
 
   /* Beneficios */
   .beneficios{background:var(--crema2);color:var(--texto)}
@@ -336,17 +336,15 @@ ttq.page();
 
   <!-- ========== 1. HERO ========== -->
   <section class="hero">
-    <div class="badge">Cuero Genuino · Edición Vélez</div>
 
-    <!-- 📸 GALERÍA PROTAGONISTA (foto grande + miniaturas; se llena sola según las fotos que subas) -->
-    <div class="hero-img">
+    <!-- 📸 GALERÍA PROTAGONISTA (foto grande, deslizable con el dedo; se llena sola según las fotos que subas) -->
+    <div class="hero-img" id="hero-img">
       <img id="foto-principal" src="img/thomas-negro.jpg" alt="Tenis Vélez Thomas Negro">
+      <span class="zoom-tip" id="swipe-hint">👉 Desliza</span>
     </div>
-    <div class="thumbs" id="thumbs"><!-- miniaturas generadas automáticamente --></div>
 
     <h1><span>Vélez Thomas</span></h1>
     <div class="stars-inline">★★★★★ <b>4.9</b> · +80.000 clientes felices</div>
-    <p class="sub">Tenis en cuero genuino con suela cómoda y resistente. Para tu día a día, del trabajo a la calle.</p>
 
     <!-- Precio -->
     <div class="precio-box">
@@ -375,6 +373,9 @@ ttq.page();
     <a href="#comprar" class="cta">Quiero mis Vélez Thomas
       <small>Paga cuando lo recibas en casa</small></a>
     <p class="cta-note">🔒 Compra segura · Sin pagos por adelantado</p>
+
+    <div class="thumbs" id="thumbs"><!-- miniaturas generadas automáticamente --></div>
+    <p class="sub">Tenis en cuero genuino con suela cómoda y resistente. Para tu día a día, del trabajo a la calle.</p>
   </section>
 
   <!-- ========== 3. BENEFICIOS ========== -->
@@ -729,6 +730,9 @@ ttq.page();
     'Negro': ['img/thomas-negro.jpg','img/thomas-negro-1.jpg','img/thomas-negro-2.jpg','img/thomas-negro-3.jpg','img/thomas-negro-4.jpg'],
     'Miel':  ['img/thomas-miel.jpg','img/thomas-miel-1.jpg','img/thomas-miel-2.jpg','img/thomas-miel-3.jpg','img/thomas-miel-4.jpg']
   };
+  var colorActual = 'Negro';
+  var galeriaActual = []; // fotos que sí cargaron para el color actual, en orden (para deslizar)
+  var galeriaIndice = 0;
 
   function setMain(src, color){
     var f = document.getElementById('foto-principal');
@@ -736,20 +740,38 @@ ttq.page();
     document.querySelectorAll('#thumbs .thumb').forEach(function(t){
       t.classList.toggle('act', t.dataset.src===src);
     });
+    var idx = galeriaActual.indexOf(src);
+    if(idx > -1) galeriaIndice = idx;
+  }
+
+  // Mueve la galería a la foto siguiente/anterior (deslizando con el dedo o desde las miniaturas)
+  function moverGaleria(direccion){
+    if(galeriaActual.length < 2) return;
+    galeriaIndice = (galeriaIndice + direccion + galeriaActual.length) % galeriaActual.length;
+    setMain(galeriaActual[galeriaIndice], colorActual);
   }
 
   function aplicarColor(color){
+    colorActual = color;
     var lista = GALERIA[color] || [];
     var cont = document.getElementById('thumbs');
     cont.innerHTML = '';
+    galeriaActual = [];
+    galeriaIndice = 0;
     // foto principal = SIEMPRE la primera de la lista (la portada), sin importar
     // cuál miniatura termine de cargar primero (antes esto causaba que una foto
     // más liviana le "ganara la carrera" a la portada y apareciera de primera).
     if(lista[0]) setMain(lista[0], color);
+    // pista de "desliza" visible solo si hay más de una foto en la lista
+    var hint = document.getElementById('swipe-hint'); if(hint) hint.style.display = lista.length>1 ? '' : 'none';
     lista.forEach(function(src){
       // probamos si la imagen existe antes de agregar la miniatura
       var test = new Image();
       test.onload = function(){
+        if(galeriaActual.indexOf(src)===-1){
+          galeriaActual.push(src);
+          galeriaActual.sort(function(a,b){ return lista.indexOf(a)-lista.indexOf(b); });
+        }
         var b = document.createElement('button');
         b.className = 'thumb'; b.dataset.src = src;
         b.innerHTML = '<img src="'+src+'" alt="'+color+'">';
@@ -782,6 +804,26 @@ ttq.page();
 
   // arranca en Negro
   aplicarColor('Negro');
+
+  // ---- Deslizar la foto principal con el dedo (swipe) ----
+  (function(){
+    var box = document.getElementById('hero-img');
+    if(!box) return;
+    var x0 = null, y0 = null;
+    box.addEventListener('touchstart', function(e){
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+    }, {passive:true});
+    box.addEventListener('touchend', function(e){
+      if(x0===null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      var dy = e.changedTouches[0].clientY - y0;
+      // solo cuenta como swipe si el movimiento horizontal domina sobre el vertical
+      if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){
+        moverGaleria(dx < 0 ? 1 : -1);
+      }
+      x0 = null; y0 = null;
+    }, {passive:true});
+  })();
 
   // ---- Video del producto: aparece solo si existe video/thomas.mp4 ----
   // Se reproduce solo, en bucle infinito, sin controles y sin sonido (estilo boomerang/gif).
