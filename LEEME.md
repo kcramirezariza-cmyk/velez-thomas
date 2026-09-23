@@ -1,4 +1,4 @@
-# LÉEME — Landing Vélez Thomas
+# LÉEME — Landing Velez Thomas
 
 Archivos de este proyecto:
 - `index.html` → la landing page.
@@ -17,7 +17,7 @@ Guarda las imágenes dentro de la carpeta `img/` con estos nombres (o cambia el 
 
 En el HTML, cada espacio está marcado con un recuadro `📸` y un comentario que dice qué archivo va ahí. Reemplaza el `<div class="ph">…</div>` por una etiqueta imagen, por ejemplo:
 ```html
-<img src="img/thomas-negro.jpg" alt="Zapato Vélez Thomas negro" style="border-radius:16px">
+<img src="img/thomas-negro.jpg" alt="Zapato Velez Thomas negro" style="border-radius:16px">
 ```
 (Si me pasas las fotos, yo hago estos reemplazos por ti.)
 

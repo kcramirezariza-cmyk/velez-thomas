@@ -1,6 +1,6 @@
-# Landing page — Tenis Vélez Thomas
+# Landing page — Tenis Velez Thomas
 
-Landing page de un solo producto (tenis Vélez Thomas, colores negro y miel) optimizada para móvil, con pago contraentrega.
+Landing page de un solo producto (tenis Velez Thomas, colores negro y miel) optimizada para móvil, con pago contraentrega.
 
 ## Archivos
 - `index.html` — la landing principal.

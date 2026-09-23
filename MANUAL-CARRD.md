@@ -1,4 +1,4 @@
-# Manual para publicar la landing "Vélez Thomas" en Carrd (Cowork)
+# Manual para publicar la landing "Velez Thomas" en Carrd (Cowork)
 
 > **Cómo usar este manual:** copia y pega TODO el contenido de este archivo como primer mensaje en una nueva sesión de Cowork. Le da al asistente el contexto y los pasos. Luego tú harás el login en Carrd (eso no lo puede hacer el asistente).
 
@@ -6,7 +6,7 @@
 
 ## 1. Contexto para el asistente (léelo, no me lo repitas)
 
-- Tengo una landing page de un producto llamado **tenis Vélez Thomas** (colores negro y miel).
+- Tengo una landing page de un producto llamado **tenis Velez Thomas** (colores negro y miel).
 - El archivo listo para publicar es: **`carrd-embed.html`** (carpeta del proyecto: `C:\Users\gabri\Downloads\claude\velez-thomas\`).
 - Ese archivo es **autocontenido**: las fotos van incrustadas en base64 y la "página de gracias" (con políticas de garantía) está integrada: aparece como una pantalla encima cuando se envía el formulario.
 - Lo voy a publicar en **Carrd** (tengo plan **Pro**, así que tengo el elemento **Embed / Code**).
