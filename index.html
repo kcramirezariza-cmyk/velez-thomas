@@ -91,7 +91,10 @@ ttq.page();
   .hero{padding:6px 20px 4px;text-align:center;background:linear-gradient(180deg,#1a1815,var(--crema))}
   .hero h1{font-size:1.22rem;color:var(--texto);margin-bottom:2px}
   .hero h1 span{color:var(--miel)}
-  .hero .sub{font-size:1rem;color:var(--gris);margin:14px 0 4px}
+  .desc-elegante{margin:14px 0 4px;padding:14px 20px;background:var(--crema2);
+    border:1px solid var(--linea);border-left:3px solid var(--miel);border-radius:4px 14px 14px 4px;text-align:center}
+  .desc-elegante p{font-family:Georgia,'Times New Roman',serif;font-style:italic;
+    font-size:.98rem;line-height:1.5;color:var(--texto);margin:0}
   .stars-inline{color:var(--miel);font-size:.8rem;margin-bottom:4px}
   .stars-inline b{color:var(--texto)}
 
@@ -99,7 +102,8 @@ ttq.page();
   .hero-img{background:var(--crema2);border-radius:var(--radio);box-shadow:var(--sombra);
     overflow:hidden;margin-bottom:6px;position:relative;
     height:48vh;min-height:230px;max-height:480px;touch-action:pan-y}
-  .hero-img img{width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none}
+  .hero-img img{width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none;
+    filter:brightness(.9) contrast(1.06) saturate(1.04)}
   .hero-img .zoom-tip{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.55);
     color:#fff;font-size:.68rem;padding:4px 9px;border-radius:20px;pointer-events:none}
   .thumbs{display:flex;gap:10px;margin:4px 0 14px;overflow-x:auto;padding:2px 0 6px;
@@ -157,6 +161,10 @@ ttq.page();
   /* Uso diario (imágenes grandes con texto encima) */
   .uso h2{text-align:center;font-size:1.4rem;color:var(--texto);margin-bottom:8px}
   .uso .sub{text-align:center;color:var(--gris);margin-bottom:20px;font-size:.95rem}
+  .uso-titulo{background:var(--crema2);border:1px solid var(--linea);border-radius:14px;
+    padding:18px 16px;margin-bottom:20px}
+  .uso-titulo h2{margin-bottom:6px}
+  .uso-titulo .sub{margin-bottom:0}
   .uso-grid{display:grid;grid-template-columns:1fr;gap:16px}
   .uso-card{position:relative;border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra);
     aspect-ratio:4/3;
@@ -217,13 +225,23 @@ ttq.page();
   .comp-no{color:var(--rojo);font-weight:800}
   .comp-col-us{background:rgba(209,145,63,.14)}
 
-  /* Números / prueba social */
-  .stats{background:var(--negro);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:0}
-  .stat{padding:26px 16px;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
-  .stat:last-child{border-right:none}
-  .stat b{display:block;font-size:2.1rem;color:var(--miel);font-weight:800;letter-spacing:-.02em}
-  .stat span{font-size:.82rem;opacity:.85}
-  .stat .stars{color:var(--miel);font-size:1.1rem}
+  /* Números / prueba social — sello de pedidos + calificación con check verde */
+  .stats{background:var(--negro);color:#fff;padding:34px 20px;
+    display:flex;flex-direction:column;align-items:center;gap:18px}
+  .sello-pedidos{width:172px;height:172px;border-radius:50%;position:relative;
+    border:3px solid var(--miel);display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;background:radial-gradient(circle,rgba(209,145,63,.10),transparent 70%)}
+  .sello-pedidos::before{content:'';position:absolute;inset:9px;border:1px solid rgba(209,145,63,.55);border-radius:50%}
+  .sello-pedidos b{font-size:1.85rem;color:#fff;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .sello-pedidos span{font-size:.68rem;color:var(--miel);text-transform:uppercase;
+    letter-spacing:.09em;font-weight:700;margin-top:7px;line-height:1.3}
+  .badge-rating{display:flex;align-items:center;gap:12px;background:rgba(32,161,94,.15);
+    border:1.5px solid var(--verde);border-radius:40px;padding:10px 22px}
+  .badge-rating .check{font-size:1.25rem}
+  .badge-rating-txt{text-align:left}
+  .badge-rating-txt b{display:block;color:#fff;font-size:1.1rem;font-weight:800}
+  .badge-rating-txt .stars{color:var(--miel);font-size:.9rem;margin-left:4px}
+  .badge-rating-txt span{font-size:.74rem;color:var(--gris)}
 
   /* Testimonios (carrusel 1 a 1) */
   .testi h2{text-align:center;font-size:1.4rem;color:var(--texto);margin-bottom:18px}
@@ -242,6 +260,11 @@ ttq.page();
   .dots{display:flex;gap:8px;justify-content:center;margin-top:14px}
   .dot{width:9px;height:9px;border-radius:50%;background:#d8cbb4;border:none;cursor:pointer;padding:0;transition:.2s}
   .dot.act{background:var(--miel);width:22px;border-radius:5px}
+
+  /* Recuadro blanco de contraste (segundo CTA) */
+  .callout-blanco{background:#fff;border-radius:16px;padding:20px 18px;margin-bottom:18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .callout-blanco h2{font-size:1.3rem;color:#1a1815;margin-bottom:6px}
+  .callout-blanco p{color:#6b6459;font-size:.9rem;margin:0}
 
   /* Marcas */
   .marcas{background:var(--crema);text-align:center}
@@ -375,7 +398,9 @@ ttq.page();
     <p class="cta-note">🔒 Compra segura · Sin pagos por adelantado</p>
 
     <div class="thumbs" id="thumbs"><!-- miniaturas generadas automáticamente --></div>
-    <p class="sub">Tenis en cuero genuino con suela cómoda y resistente. Para tu día a día, del trabajo a la calle.</p>
+    <div class="desc-elegante">
+      <p>“Tenis en cuero genuino con suela cómoda y resistente. Para tu día a día, del trabajo a la calle.”</p>
+    </div>
   </section>
 
   <!-- ========== 3. BENEFICIOS ========== -->
@@ -392,8 +417,10 @@ ttq.page();
   <!-- ========== USO DIARIO (imágenes grandes con texto encima) ========== -->
   <!-- 📸 Sube tus fotos como img/uso-1.jpg ... img/uso-4.jpg y reemplazan el fondo. -->
   <section class="sec uso">
-    <h2>Un tenis, mil ocasiones</h2>
-    <p class="sub">Del trabajo a la calle, siempre bien puesto</p>
+    <div class="uso-titulo">
+      <h2>Un tenis, mil ocasiones</h2>
+      <p class="sub">Del trabajo a la calle, siempre bien puesto</p>
+    </div>
     <div class="uso-grid">
 
       <div class="uso-card">
@@ -484,8 +511,17 @@ ttq.page();
 
   <!-- ========== 7 y 8. NÚMEROS ========== -->
   <section class="stats">
-    <div class="stat"><b>+80.000</b><span>Pedidos entregados</span></div>
-    <div class="stat"><b>4.9</b><span class="stars">★★★★★</span><br><span>Calificación promedio</span></div>
+    <div class="sello-pedidos">
+      <b>+80.000</b>
+      <span>Pedidos<br>entregados</span>
+    </div>
+    <div class="badge-rating">
+      <span class="check">✅</span>
+      <div class="badge-rating-txt">
+        <b>4.9 <span class="stars">★★★★★</span></b>
+        <span>Calificación promedio</span>
+      </div>
+    </div>
   </section>
 
   <!-- ========== 6. TESTIMONIOS (carrusel 1 a 1) ========== -->
@@ -563,8 +599,10 @@ ttq.page();
 
   <!-- ========== 9. SEGUNDO CTA ========== -->
   <section class="sec" style="text-align:center;background:var(--crema2)">
-    <h2 style="font-size:1.3rem;color:var(--negro);margin-bottom:6px">Únete a los +80.000 clientes</h2>
-    <p style="color:var(--gris);font-size:.9rem;margin-bottom:16px">Aprovecha el precio de hoy antes de que suba</p>
+    <div class="callout-blanco">
+      <h2>Únete a los +80.000 clientes</h2>
+      <p>Aprovecha el precio de hoy antes de que suba</p>
+    </div>
     <a href="#comprar" class="cta">Comprar ahora — $150.000
       <small>Envío gratis · Paga al recibir</small></a>
   </section>
@@ -591,8 +629,7 @@ ttq.page();
     <h2>Lleva un <span>par de medias GRATIS</span></h2>
     <p>Solo para los pedidos que se hagan hoy. La oferta termina en:</p>
     <div class="countdown" id="countdown">
-      <div class="cd-box"><b id="cd-h">00</b><span>Horas</span></div>
-      <div class="cd-box"><b id="cd-m">00</b><span>Min</span></div>
+      <div class="cd-box"><b id="cd-m">15</b><span>Min</span></div>
       <div class="cd-box"><b id="cd-s">00</b><span>Seg</span></div>
     </div>
     <p class="cd-label">⏳ El regalo se retira automáticamente cuando el contador llegue a cero</p>
@@ -689,8 +726,8 @@ ttq.page();
   <!-- ========== FOOTER ========== -->
   <footer>
     <div class="logo">VÉLEZ</div>
-    <p>Zapatos Vélez Thomas · Cuero genuino</p>
-    <p style="margin-top:10px">📲 ¿Dudas? <a href="https://wa.me/573223043403" target="_blank">Escríbenos por WhatsApp</a></p>
+    <p>Tenis en cuero genuino · Envío a toda Colombia</p>
+    <p style="margin-top:10px">📲 ¿Dudas? <a href="https://wa.me/573224018992" target="_blank">Escríbenos por WhatsApp</a></p>
     <p class="legal">
       Envío gratis a todo Colombia · Pago contraentrega · Garantía extendida 3+ meses.<br>
       © 2026 Todos los derechos reservados. Ver <a href="gracias.html#politicas">políticas de garantía</a>.
@@ -710,7 +747,7 @@ ttq.page();
 <script>
   // ============================================================
   // 🔶 NÚMERO DE WHATSAPP — cámbialo aquí (formato: 57 + número, sin + ni espacios)
-  var WA_NUMERO = '573223043403';
+  var WA_NUMERO = '573224018992';
   // ============================================================
 
   // ---- Enlaces de WhatsApp por marca (mensaje pre-escrito) ----
@@ -847,15 +884,23 @@ ttq.page();
     v.load();
   })();
 
-  // ---- Contador de oferta (se reinicia cada día a medianoche) ----
+  // ---- Contador de oferta: 15 minutos reales por visita ----
+  // Se guarda la hora de fin en esta pestaña (sessionStorage), así que si el
+  // cliente recarga o navega por la página sigue contando los mismos 15 min;
+  // en una visita nueva (pestaña/sesión nueva) arrancan otros 15 min.
+  var CD_CLAVE = 'ofertaVelezFin';
+  var cdFin = (function(){
+    var guardado = null;
+    try{ guardado = sessionStorage.getItem(CD_CLAVE); }catch(e){}
+    if(guardado) return parseInt(guardado, 10);
+    var fin = Date.now() + 15*60*1000;
+    try{ sessionStorage.setItem(CD_CLAVE, fin); }catch(e){}
+    return fin;
+  })();
   function tick(){
-    var now = new Date();
-    var fin = new Date(); fin.setHours(23,59,59,999);
-    var diff = Math.max(0, fin - now);
-    var h = Math.floor(diff/3.6e6);
-    var m = Math.floor(diff%3.6e6/6e4);
+    var diff = Math.max(0, cdFin - Date.now());
+    var m = Math.floor(diff/6e4);
     var s = Math.floor(diff%6e4/1000);
-    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
     document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
     document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
   }
