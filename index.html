@@ -363,7 +363,7 @@ ttq.page();
 
     <!-- 📸 GALERÍA PROTAGONISTA (foto grande, deslizable con el dedo; se llena sola según las fotos que subas) -->
     <div class="hero-img" id="hero-img">
-      <img id="foto-principal" src="img/thomas-negro.jpg" alt="Tenis Vélez Thomas Negro">
+      <img id="foto-principal" src="img/thomas-negro.jpg" alt="Tenis Thomas Negro">
       <span class="zoom-tip" id="swipe-hint">👉 Desliza</span>
     </div>
 
@@ -393,7 +393,7 @@ ttq.page();
     </div>
 
     <!-- 2. CTA principal -->
-    <a href="#comprar" class="cta">Quiero mis Vélez Thomas
+    <a href="#comprar" class="cta">¡Los quiero ya!
       <small>Paga cuando lo recibas en casa</small></a>
     <p class="cta-note">🔒 Compra segura · Sin pagos por adelantado</p>
 
@@ -457,7 +457,7 @@ ttq.page();
        Mientras no exista, se muestra el recuadro guía. Recomendado: vertical 9:16. -->
   <section class="sec video-sec">
     <h2>Míralos en movimiento</h2>
-    <p class="sub">Así se ven los Vélez Thomas por dentro y por fuera</p>
+    <p class="sub">Así se ven por dentro y por fuera</p>
     <div id="video-wrap">
       <div class="video-ph">
         <div class="ic">📹</div>
@@ -497,9 +497,9 @@ ttq.page();
 
   <!-- ========== 5. COMPARACIÓN CON LA COMPETENCIA ========== -->
   <section class="sec comp">
-    <h2>¿Por qué Vélez Thomas?</h2>
+    <h2>¿Por qué elegirnos?</h2>
     <table class="comp-table">
-      <tr><th>Característica</th><th class="comp-col-us">Vélez Thomas</th><th>Otras marcas</th></tr>
+      <tr><th>Característica</th><th class="comp-col-us">Nosotros</th><th>Otras marcas</th></tr>
       <tr><td>Cuero 100% genuino</td><td class="comp-col-us comp-yes">✔</td><td class="comp-no">✗</td></tr>
       <tr><td>Envío gratis</td><td class="comp-col-us comp-yes">✔</td><td class="comp-no">✗</td></tr>
       <tr><td>Pago contraentrega</td><td class="comp-col-us comp-yes">✔</td><td class="comp-no">✗</td></tr>
@@ -645,7 +645,7 @@ ttq.page();
     <form id="form-compra" onsubmit="return prepararEnvio(event)">
 
       <div class="resumen">
-        <div class="r-line"><span>Producto</span><span><b>Vélez Thomas</b></span></div>
+        <div class="r-line"><span>Producto</span><span><b>Tenis Thomas</b></span></div>
         <div class="r-line"><span>Color</span><span id="res-color">Negro</span></div>
         <div class="r-line"><span>Regalo</span><span>🧦 Medias premium</span></div>
         <div class="r-total"><span>Total a pagar</span><span>$150.000</span></div>
@@ -715,7 +715,7 @@ ttq.page();
     </div>
     <div class="paso">
       <div class="num">2</div>
-      <div><b>Mañana</b> <span class="fecha" id="p-manana"></span><p>Empacamos tus Vélez Thomas y los despachamos a tu ciudad.</p></div>
+      <div><b>Mañana</b> <span class="fecha" id="p-manana"></span><p>Empacamos tus tenis y los despachamos a tu ciudad.</p></div>
     </div>
     <div class="paso">
       <div class="num">3</div>
@@ -773,7 +773,7 @@ ttq.page();
 
   function setMain(src, color){
     var f = document.getElementById('foto-principal');
-    if(f){ f.src = src; f.alt = 'Tenis Vélez Thomas ' + color; }
+    if(f){ f.src = src; f.alt = 'Tenis Thomas ' + color; }
     document.querySelectorAll('#thumbs .thumb').forEach(function(t){
       t.classList.toggle('act', t.dataset.src===src);
     });
